@@ -14,12 +14,12 @@ thrill.io is a simple yet powerfull bookmarking application powered by java.
 
 ### Development Roadmap:
 
-[x] Release initial project architecture  
-[ ] Database integration for persistence   
-[ ] Build user interface  
-[ ] Add authentication and login  
-[ ] Integrate elasticsearch to filter and search discoveries  
-[ ] Dockerized application  
-[ ] Deploy application
+- [x] Release initial project architecture  
+- [ ] Database integration for persistence   
+- [ ] Build user interface  
+- [ ] Add authentication and login  
+- [ ] Integrate elasticsearch to filter and search discoveries  
+- [ ] Dockerized application  
+- [ ] Deploy application
 
 ### Running Locally:
