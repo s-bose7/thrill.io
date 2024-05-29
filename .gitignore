@@ -3,6 +3,9 @@
 # Eclipse workspace files
 .metadata/
 
+# Build output directory
+bin/
+
 # Compiled class files
 *.class
 
