@@ -18,20 +18,25 @@ public class UserService {
 	}
 	/*Ends here*/
 	
-	public User createUser(ArrayList<String> userData) {
+	private User createNewUserInstance(ArrayList<String> userData) {
 		User newUser = new User();
 		newUser.setEmail(userData.get(0));
 		newUser.setPassword(userData.get(1));
-		newUser.setUserName(userData.get(2));
-		newUser.setGenderString(userData.get(3));
-		newUser.setUserTypeString(userData.get(4));
-		userDao.addUserToDB(newUser);
+		newUser.setFirstName(userData.get(2));
+		newUser.setLastName(userData.get(3));
+		newUser.setGenderId(1);
+		newUser.setUserTypeId(1);
+		return newUser;
+	}
+	
+	public User createUser(ArrayList<String> userData) {
+		User newUser = createNewUserInstance(userData);
+		userDao.insertUser(newUser);
 		return newUser;
 	}
 	
 	public User userExistanceStatus(String email, String password) {
-		User user = userDao.checkWhetherUserExist(email, password);
-		return user;
+		return userDao.findUserByEmailAndPassword(email, password);
 	}
 	
 	

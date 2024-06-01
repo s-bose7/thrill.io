@@ -31,7 +31,8 @@ public class View {
 		System.out.println("\nEnter user details: ");
 		
 		String userEmail = readString("signup email");
-		String userName = readString("user name");
+		String firstName = readString("first name");
+		String lastName = readString("last name");
 		String userPassword = readString("password");
 		String userGender = readString("gender");
 		String userType = readString("user type");
@@ -39,7 +40,8 @@ public class View {
 		ArrayList<String> userDataArrayList = new ArrayList<>();
 		userDataArrayList.add(userEmail);
 		userDataArrayList.add(userPassword);
-		userDataArrayList.add(userName);
+		userDataArrayList.add(firstName);
+		userDataArrayList.add(lastName);
 		userDataArrayList.add(userGender);
 		userDataArrayList.add(userType);
 		User user =	UserController.getInstanceUserController().createNewUser(userDataArrayList);
@@ -81,7 +83,7 @@ public class View {
 	
 	private void showAllBookmarks(User user) {
 		ArrayList<BookMark> userBookMarks = BookmarkController.getUserBookMarks(user);
-		System.out.println("\n"+user.getUserName()+" bookmarks...("+userBookMarks.size()+")");
+		System.out.println("\n"+user.getFirstName()+" bookmarks...("+userBookMarks.size()+")");
 		for(BookMark bookMark : userBookMarks) {
 			System.out.println("bookMark id: "+ bookMark.getId() +" bookMark url: "+bookMark.getProfileUrlString());
 		}
