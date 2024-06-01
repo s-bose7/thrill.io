@@ -1,14 +1,46 @@
 package com.semanticsquare.thrillio.entities;
 
+import javax.persistence.Basic;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "User")
 public class User {
 
+	@Id
+	@Basic
+	@Column(name = "id")
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long userId;
-	private String userName;
-	private String email;
-	private String password;
-	private String userTypeString;
-	private String genderString;
 
+	@Basic
+	@Column(name = "first_name")
+	private String firstName;
+
+	@Basic
+	@Column(name = "last_name")
+	private String lastName;
+
+	@Basic
+	@Column(name = "email")
+	private String email;
+
+	@Basic
+	@Column(name = "password")
+	private String password;
+
+	@Column(name = "user_type_id")
+	private Integer userTypeId;
+
+	@Column(name = "gender_id")
+	private Integer genderId;
+
+	// Getters and Setters
 	public long getUserId() {
 		return userId;
 	}
@@ -17,12 +49,20 @@ public class User {
 		this.userId = userId;
 	}
 
-	public String getUserName() {
-		return userName;
+	public String getFirstName() {
+		return firstName;
 	}
 
-	public void setUserName(String userName) {
-		this.userName = userName;
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+
+	public String getLastName() {
+		return lastName;
+	}
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
 	}
 
 	public String getEmail() {
@@ -41,20 +81,20 @@ public class User {
 		this.password = password;
 	}
 
-	public String getUserTypeString() {
-		return userTypeString;
+	public Integer getGenderId() {
+		return genderId;
 	}
 
-	public void setUserTypeString(String userTypeString) {
-		this.userTypeString = userTypeString;
+	public void setGenderId(Integer genderId) {
+		this.genderId = genderId;
 	}
 
-	public String getGenderString() {
-		return genderString;
+	public Integer getUserTypeId() {
+		return userTypeId;
 	}
 
-	public void setGenderString(String genderString) {
-		this.genderString = genderString;
+	public void setUserTypeId(Integer userTypeId) {
+		this.userTypeId = userTypeId;
 	}
 
 }
