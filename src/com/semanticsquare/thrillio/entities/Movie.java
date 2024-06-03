@@ -1,10 +1,25 @@
 package com.semanticsquare.thrillio.entities;
 
-public class Movie extends BookMark {
+import javax.persistence.Basic;
+import javax.persistence.Column;
+import javax.persistence.DiscriminatorValue;
+import javax.persistence.Entity;
+
+
+@Entity
+@DiscriminatorValue("Movie")
+public class Movie extends Bookmark {
+	
+	@Basic
+	@Column(name = "release_year")
 	private int releaseYear;
-	private String[] castStrings;
-	private String[] directorStrings;
+	
+	@Basic
+	@Column(name = "genre")
 	private String genre;
+	
+	@Basic
+	@Column(name = "imdb_rating")
 	private double imdbRating;
 
 	public int getReleaseYear() {
@@ -13,22 +28,6 @@ public class Movie extends BookMark {
 
 	public void setReleaseYear(int releaseYear) {
 		this.releaseYear = releaseYear;
-	}
-
-	public String[] getCastStrings() {
-		return castStrings;
-	}
-
-	public void setCastStrings(String[] castStrings) {
-		this.castStrings = castStrings;
-	}
-
-	public String[] getDirectorStrings() {
-		return directorStrings;
-	}
-
-	public void setDirectorStrings(String[] directorStrings) {
-		this.directorStrings = directorStrings;
 	}
 
 	public String getGenre() {
@@ -46,5 +45,4 @@ public class Movie extends BookMark {
 	public void setImdbRating(double imdbRating) {
 		this.imdbRating = imdbRating;
 	}
-
 }
