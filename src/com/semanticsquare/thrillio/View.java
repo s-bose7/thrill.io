@@ -8,8 +8,7 @@ import java.io.IOException;
 
 import com.semanticsquare.thrillio.controllers.BookmarkController;
 import com.semanticsquare.thrillio.controllers.UserController;
-import com.semanticsquare.thrillio.entities.BookMark;
-//import com.semanticsquare.thrillio.entities.BookMark;
+import com.semanticsquare.thrillio.entities.Bookmark;
 import com.semanticsquare.thrillio.entities.User;
 
 
@@ -77,15 +76,15 @@ public class View {
 	
 	private void logoutCurrentSession() {
 		this.userLoggedIn = false;
-		System.out.println("\nLogging out... ..done");
+		System.out.println("\nLogging out... ..done\nBye");
 	}
 	
 	
 	private void showAllBookmarks(User user) {
-		ArrayList<BookMark> userBookMarks = BookmarkController.getUserBookMarks(user);
+		ArrayList<Bookmark> userBookMarks = BookmarkController.getUserBookMarks(user);
 		System.out.println("\n"+user.getFirstName()+" bookmarks...("+userBookMarks.size()+")");
-		for(BookMark bookMark : userBookMarks) {
-			System.out.println("bookMark id: "+ bookMark.getId() +" bookMark url: "+bookMark.getProfileUrlString());
+		for(Bookmark bookMark : userBookMarks) {
+			System.out.println("bookMark type: "+ bookMark.getType() +" bookMark url: "+bookMark.getUrl());
 		}
 	}
 	
@@ -110,9 +109,10 @@ public class View {
 	        /* (ON_PRESS_KEY) */
 	        System.out.println("2. Create a new bookmark");
 	        /* (ON_PRESS_KEY) (Authorization required) */
-	        System.out.println("3. Mark a bookmark as KidFriendly");
+	        System.out.println("3. Mark a bookmark as Favourite");
 	        /* (ON_PRESS_KEY) */
 	        System.out.println("4. Logout\n");
+	        
 	        /* (DEFAULT)  */
 	        showAllBookmarks(sessionUser);
 
