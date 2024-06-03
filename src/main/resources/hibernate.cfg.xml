@@ -16,6 +16,11 @@
         <!-- Echo all executed SQL to stdout -->
         <property name="hibernate.show_sql">true</property>
         <mapping class="com.semanticsquare.thrillio.entities.User"/>
+        <mapping class="com.semanticsquare.thrillio.entities.Bookmark"/>
+        <mapping class="com.semanticsquare.thrillio.entities.Book"/>
+        <mapping class="com.semanticsquare.thrillio.entities.Author"/>
+        <mapping class="com.semanticsquare.thrillio.entities.Weblink"/>
+        <mapping class="com.semanticsquare.thrillio.entities.Movie"/>
     	
     </session-factory>
 </hibernate-configuration>
