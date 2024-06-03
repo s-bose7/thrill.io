@@ -10,7 +10,7 @@ thrill.io is a simple yet powerfull bookmarking application powered by java.
 
 
 ### Database Schema:
-![database_schema](schema/thrillio_database_schema.png)
+![database_schema](schema/thrillio_database_erd.png)
 
 ### Development Roadmap:
 
